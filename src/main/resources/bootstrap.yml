@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:7001/eureka/
+  instance:
+    instanceId: client-01
+    preferIpAddress: true
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-server-my
+#      uri: http://localhost:8551/ # 配置中心的具体地址
+      name: spring-config  # 对应{application}部分
+      profile: master  # 对应{profile}部分
+      label: master  # 对应git的分支，如果配置中心使用的是本地存储，则该参数无用
