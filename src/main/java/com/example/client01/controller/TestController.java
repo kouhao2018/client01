@@ -54,14 +54,15 @@ public class TestController {
     private KafkaTemplate<String, String> kafkaTemplate;
 
 
-    @Value("${spring.config.hello}")
+//    @Value("${spring.config.hello}")
+    @Value("${kouhao}")
     private String hello;
 
 
     @GetMapping("/hello/{message}")
     public String from(@PathVariable String message) {
 
-        kafkaTemplate.send("test",message);
+//        kafkaTemplate.send("test",message);
 
 
         return this.hello;
